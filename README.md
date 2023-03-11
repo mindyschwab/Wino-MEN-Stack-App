@@ -49,7 +49,7 @@ Who are Wino users?
 ## Wireframes 
  Please note that this is a gif
 
-![alt text](Wireframes-ERD/Wino%20Wireframe.gif "Wireframe 1") -->
+![alt text](Wireframes-ERD/Wino%20Wireframe.gif "Wireframe 1") 
 
 ## ERD
 ![alt text](Wireframes-ERD/Wino%20ERD.png "Wireframe 1")

@@ -13,8 +13,8 @@ const db = require('./models');
 
 /* Require the routes in the controllers folder
 --------------------------------------------------------------- */
-// const productsCtrl = require('./controllers/products');
-// const reviewsCtrl = require('./controllers/reviews');
+const winesCtrl = require('./controllers/wines');
+const reviewsCtrl = require('./controllers/reviews');
 
 /* Create the Express app
 --------------------------------------------------------------- */
@@ -61,21 +61,21 @@ app.get('/', function (req, res) {
     res.send('Hello World')
 });
 
-// When a GET request is sent to `/seed`, the products collection is seeded
-// app.get('/seed', function (req, res) {
-//     // Remove any existing products
-//     db.Product.deleteMany({})
-//         .then(removedProducts => {
-//             console.log(`Removed ${removedProducts.length} products from the database`)
+// When a GET request is sent to `/seed`, the wines collection is seeded
+app.get('/seed', function (req, res) {
+    // Remove any existing wines in db
+    db.Wine.deleteMany({})
+        .then(removedWines => {
+            console.log(`Removed ${removedWines.length} wines from the database`)
 
-//             // Seed the express-store collection with the seed data
-//             db.Product.insertMany(db.seedProducts)
-//                 .then(addedProducts => {
-//                     console.log(`Added ${addedProducts.length} products seeded to the database`)
-//                     res.json(addedProducts)
-//                 })
-//         })
-// });
+            // Seed the wine db collection with the seed data
+            db.Wine.insertMany(db.seedWines)
+                .then(addedWines => {
+                    console.log(`Added ${addedWines.length} wines seeded to the database`)
+                    res.json(addedWines)
+                })
+        })
+});
 
 // app.get('/about', function (req, res) {
 //     res.render('about')
