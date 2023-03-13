@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: 'WINO' }) %>
+        <!-- <link rel="stylesheet" href="/styles/product-index.css"> -->
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+        <main>
+            <section class="listings">
+                <h1>Available Items</h1>
+                <ul>
+                    <% for (let wine of wines) { %>
+                        <li>
+                            <figure>
+                                <img src="<%= wine.photo %>" alt="Wine Image">
+                                <h4>
+                                    <%= wine.name %>
+                                </h4>
+                                <p>
+                                <p>
+                                    <%= wine.style %>
+                                </p>
+                                <p>
+                                    <%= wine.type %>
+                                </p>
+                                <p>
+                                    <%= wine.producer %>
+                                </p>
+                                <p>Rating: <%= wine.averageRating %>/5
+                                </p>
+
+                                <a href="/wines/<%= wine._id %>" class="btn">Learn More</a>
+                            </figure>
+                        </li>
+                        <% } %>
+                </ul>
+            </section>
+        </main>
+
+        <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

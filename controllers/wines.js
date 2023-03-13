@@ -21,10 +21,10 @@ const db = require('../models')
 router.get('/', function (req, res) {
     db.Wine.find({})
         .then(wines => {
-            // res.render('wine-index', {
-            //     wines: wines
-            // })
-            res.send('Wines Index Page')
+            res.render('wines/wine-index', {
+                wines: wines
+            })
+            // res.send('Wines Index Page')
         })
 })
 
@@ -87,9 +87,9 @@ router.put('/:id', (req, res) => {
 // // Destroy Route (DELETE/Delete): This route deletes a wine document 
 // // using the URL parameter (which will always be the wine document's ID)
 router.delete('/:id', (req, res) => {
-    // db.Wine.findByIdAndRemove(req.params.id)
-    //     .then(() => res.redirect('/wines'))
-    res.send('Wines Delete Route- will send delete request from show page. Redirects to inde page. Wine ID: ' + req.params.id)
+    db.Wine.findByIdAndRemove(req.params.id)
+        .then(() => res.redirect('/wines'))
+    // res.send('Wines Delete Route- will send delete request from show page. Redirects to inde page. Wine ID: ' + req.params.id)
 })
 
 
@@ -97,13 +97,13 @@ router.delete('/:id', (req, res) => {
 // // using the URL parameter (which is the document _id)
 router.get('/:id', function (req, res) {
     db.Wine.findById(req.params.id)
-    // .then(wine => {
-    //     res.render('wine-details', {
-    //         wine: wine
-    //     })
-    // })
-    // .catch(() => res.send('404 Error: Page Not Found'))
-    res.send('Wines Show Route- Wine ID: ' + req.params.id)
+        .then(wine => {
+            res.render('wines/wine-details', {
+                wine: wine
+            })
+        })
+        .catch(() => res.send('404 Error: Page Not Found'))
+    // res.send('Wines Show Route- Wine ID: ' + req.params.id)
 })
 
 /* Export these routes so that they are accessible in `server.js`

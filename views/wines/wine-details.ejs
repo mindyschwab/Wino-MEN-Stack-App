@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: `${wine.name} | WINO | Wine Details`}) %>
+        <!-- <link rel="stylesheet" href="/styles/product-details.css"> -->
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+        <div>
+            <img src="<%= wine.photo %>" alt="Wine Image">
+            <h2 class="wine-name">
+                <%= wine.name %>
+            </h2>
+            <section>
+                <p>
+                    Style: <%= wine.style %>
+                </p>
+                <p>
+                    Type: <%= wine.type %>
+                </p>
+                <p>
+                    Producer: <%= wine.producer %>
+                </p>
+                <p>
+                    Vintage: <%= wine.year %>
+                </p>
+
+                <p>Region: <%= wine.region %>
+                </p>
+                <p><strong>User Rating:</strong>
+                    <%= wine.averageRating %>/5
+                </p>
+                <p><strong>ABV:</strong>
+                    <%= wine.abv %> %
+                </p>
+                <p><strong>Description:</strong>
+                    <%= wine.description %>
+                </p>
+            </section>
+            <section>
+                <!-- display reviews for this wine -->
+                <% if (wine.reviews.length < 1) {%>
+                    <p> No reviews yet. </p>
+                    <% } else {%>
+                        <p><strong>Reviews:</strong>
+                        </p>
+                        <% for (let i=0; i< wine.reviews.length; i++ ) { %>
+                            <div class="review">
+                                <p><strong>
+                                        <%= wine.reviews[i].title %>
+                                    </strong>
+                                </p>
+                                <p class="reviewer">
+                                    <%= wine.reviews[i].reviewerName %>
+                                </p>
+                                <p>
+                                    <%= wine.reviews[i].content %>
+                                </p>
+                            </div>
+                            <% }} %>
+
+            </section>
+
+            <section class="actions">
+                <form method="POST" action="/wines/<%= wine._id %>?_method=DELETE">
+                    <input class="btn" type="submit" value="Delete" />
+                </form>
+                <button class="btn"><a id="review" href="/reviews/new/<%= wine._id %>">Add Review</a></button>
+                <button class="btn"><a id="edit" href="/wines/<%= wine._id %>/edit">Edit</a></button>
+            </section>
+
+
+
+        </div>
+
+        <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
