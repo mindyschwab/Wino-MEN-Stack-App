@@ -78,8 +78,8 @@ app.get('/seed', function (req, res) {
 });
 
 app.get('/about', function (req, res) {
-    // res.render('about')
-    res.send('Hello from the about page')
+    res.render('about')
+    // res.send('Hello from the about page')
 });
 
 
@@ -93,8 +93,8 @@ app.use('/reviews', reviewsCtrl)
 
 // // The "catch-all" route: Runs for any other URL that doesn't match the above routes
 app.get('*', function (req, res) {
-    // res.render('404')
-    res.send('404')
+    res.render('404')
+    // res.send('404')
 });
 
 /* Tell the app to listen on the specified port
