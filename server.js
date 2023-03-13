@@ -52,13 +52,13 @@ app.use(methodOverride('_method'));
 /* Mount routes
 --------------------------------------------------------------- */
 app.get('/', function (req, res) {
-    // db.Product.find({ isFeatured: true })
-    // .then(products => {
-    //     res.render('home', {
-    //         products: products
-    //     })
-    // })
-    res.send('Hello World')
+    db.Wine.find({ isFeatured: true })
+        .then(wines => {
+            res.render('home', {
+                wines: wines
+            })
+        })
+    // res.send('Hello World')
 });
 
 // When a GET request is sent to `/seed`, the wines collection is seeded

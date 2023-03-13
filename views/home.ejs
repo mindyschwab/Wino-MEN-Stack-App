@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'WINO | Home' }) %>
+        <!-- <link rel="stylesheet" href="/styles/home.css"> -->
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+        <main>
+            <section class="banner">
+                <h2>Welcome to WINO!</h2>
+                <!-- <a href="/wines" class="btn">Shop Now!</a> -->
+            </section>
+
+
+            <section class="featured-wines">
+                <h2>Featured Wines</h2>
+                <ul class="wine-grid">
+                    <% for (let wine of wines) { %>
+                        <li>
+                            <img src="<%= wine.photo %>" alt="Wine Image">
+                            <h3>
+                                <%= wine.name %>
+                            </h3>
+                            <p>
+                                <%= wine.style %>
+                            </p>
+                            <p>
+                                <%= wine.type %>
+                            </p>
+                            <p>
+                                <%= wine.producer %>
+                            </p>
+                            <p>Rating: <%= wine.averageRating %>/5
+                            </p>
+
+                            <a href="/wines/<%= wine._id %>" class="btn">Learn More</a>
+                        </li>
+                        <% } %>
+                </ul>
+            </section>
+        </main>
+
+        <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
