@@ -12,6 +12,6 @@ const mongodbUri = process.env.MONGODBURI;
 
 // Export models and seed data to `server.js`
 module.exports = {
-    Wines: require('./wine'),
+    Wine: require('./wine'),
     seedWines: require('./seed')
 }
