@@ -83,12 +83,12 @@ app.get('/about', function (req, res) {
 });
 
 
-// // This tells our app to look at the `controllers/products.js` file 
-// // to handle all routes that begin with `localhost:3000/products`
-// app.use('/products', productsCtrl)
+// // This tells our app to look at the `controllers/wines.js` file 
+// to handle all routes that begin with `localhost:3000/wines`
+app.use('/wines', winesCtrl)
 
-// // This tells our app to look at the `controllers/applications.js` file 
-// // to handle all routes that begin with `localhost:3000/applications`
+// // This tells our app to look at the `controllers/reviews.js` file 
+// // to handle all routes that begin with `localhost:3000/reviews`
 // app.use('/reviews', reviewsCtrl)
 
 // // The "catch-all" route: Runs for any other URL that doesn't match the above routes
