@@ -89,7 +89,7 @@ app.use('/wines', winesCtrl)
 
 // // This tells our app to look at the `controllers/reviews.js` file 
 // // to handle all routes that begin with `localhost:3000/reviews`
-// app.use('/reviews', reviewsCtrl)
+app.use('/reviews', reviewsCtrl)
 
 // // The "catch-all" route: Runs for any other URL that doesn't match the above routes
 app.get('*', function (req, res) {
