@@ -77,9 +77,10 @@ app.get('/seed', function (req, res) {
         })
 });
 
-// app.get('/about', function (req, res) {
-//     res.render('about')
-// });
+app.get('/about', function (req, res) {
+    // res.render('about')
+    res.send('Hello from the about page')
+});
 
 
 // // This tells our app to look at the `controllers/products.js` file 
@@ -91,9 +92,10 @@ app.get('/seed', function (req, res) {
 // app.use('/reviews', reviewsCtrl)
 
 // // The "catch-all" route: Runs for any other URL that doesn't match the above routes
-// app.get('*', function (req, res) {
-//     res.render('404')
-// });
+app.get('*', function (req, res) {
+    // res.render('404')
+    res.send('404')
+});
 
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
