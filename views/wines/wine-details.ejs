@@ -67,11 +67,12 @@
             </section>
 
             <section class="actions">
-                <form method="POST" action="/wines/<%= wine._id %>?_method=DELETE">
-                    <input class="btn" type="submit" value="Delete" />
-                </form>
+
                 <button class="btn"><a id="review" href="/reviews/new/<%= wine._id %>">Add Review</a></button>
-                <button class="btn"><a id="edit" href="/wines/<%= wine._id %>/edit">Edit</a></button>
+                <button class="btn"><a id="edit" href="/wines/<%= wine._id %>/edit">Edit Wine Info</a></button>
+                <form method="POST" action="/wines/<%= wine._id %>?_method=DELETE">
+                    <input class="btn" type="submit" value="Delete Wine" />
+                </form>
             </section>
 
 
