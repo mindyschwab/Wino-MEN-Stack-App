@@ -31,8 +31,8 @@ router.get('/', function (req, res) {
 // New Route (GET/Read): This route renders a form 
 // which the user will fill out to POST (create) a new location
 router.get('/new', (req, res) => {
-    // res.render('new-form')
-    res.send('Wines New Page')
+    res.render('wines/new-wine-form')
+    // res.send('Wines New Page')
 })
 
 // // Create Route (POST/Create): This route receives the POST request sent from the new route,
@@ -40,35 +40,35 @@ router.get('/new', (req, res) => {
 // // and redirects the user to the new wine's show page
 router.post('/', (req, res) => {
     db.Wine.create(req.body)
-    // .then(wine => {
-    //     res.redirect(`/wines/${wine._id}`)
-    // })
-    res.send('Wines Create Route- will redirect to show page')
+        .then(wine => {
+            res.redirect(`/wines/${wine._id}`)
+        })
+    // res.send('Wines Create Route- will redirect to show page')
 })
 
 // // Edit Route (GET/Read): This route renders a form
 // // the user will use to PUT (edit) properties of an existing wine
 router.get('/:id/edit', (req, res) => {
     db.Wine.findById(req.params.id)
-    // .then(wine => {
-    //     res.render('edit-form', {
-    //         wine: wine
-    //     })
-    // })
-    res.send('Wines Edit Route- will render edit form. Wine ID: ' + req.params.id)
+        .then(wine => {
+            res.render('wines/edit-wine-form', {
+                wine: wine
+            })
+        })
+    // res.send('Wines Edit Route- will render edit form. Wine ID: ' + req.params.id)
 })
 
 // // Update Route (PUT/Update): This route receives the PUT request sent from the edit route, 
 // // edits the specified wine document using the form data,
 // // and redirects the user back to the show page for the updated location.
 router.put('/:id', (req, res) => {
-    // db.Wine.findByIdAndUpdate(
-    //     req.params.id,
-    //     req.body,
-    //     { new: true }
-    // )
-    //     .then(wine => res.redirect(`/wines/${wine._id}`))
-    res.send('Wines Update Route- will send put request from edit form. Redirects to show page. Wine ID: ' + req.params.id)
+    db.Wine.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
+    )
+        .then(wine => res.redirect(`/wines/${wine._id}`))
+    // res.send('Wines Update Route- will send put request from edit form. Redirects to show page. Wine ID: ' + req.params.id)
 })
 
 // // Create a purchase button on the show page of each wine.When pressed, it will decrement the quantity of the wine in the database.
