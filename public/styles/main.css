@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 .wine-image {
-    max-width: 450px;
-    max-height: 450px;
+    max-width: 425px;
+    max-height: 425px;
 }
 
 .wine-card {
-    height: 750px;
+    height: 700px;
 }

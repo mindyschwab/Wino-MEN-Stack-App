@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="emerald">
 
 <head>
     <%- include('./partials/head.ejs', {title: `About WINO`}) %>
@@ -10,44 +10,56 @@
     <%- include('./partials/nav.ejs') %>
 
         <main>
-            <section class="banner">
-                <h2>About Us</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, quia obcaecati! Ut reiciendis
-                    quo ex dolores commodi nesciunt sapiente quia quam perspiciatis! Quis aliquam officiis pariatur
-                    nostrum dolores facilis error.</p>
-            </section>
+            <div class="hero min-h-16 "
+                style="background-image: url(https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);">
+                <div class=" hero-overlay bg-opacity-60"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="max-w-md">
+                        <h1 class="mb-5 text-5xl font-bold">About Us</h1>
+                        <p class="mb-5">We believe that enjoying a good glass of wine shouldn't have to break the bank.
+                            We cater to normal people who appreciate
+                            affordable wines and want to keep track of their favorites. Our platform makes it easy for
+                            you to remember which wines
+                            you've tried and what you thought of them. We provide honest, user-generated ratings and
+                            reviews to help you make
+                            informed decisions and discover new wines. Join our community of wine lovers and let's raise
+                            a glass to good taste
+                            without the hefty price tag. Cheers!</p>
+                    </div>
+                </div>
+            </div>
 
-            <section class="content">
-                <h2>Section 1</h2>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ullam excepturi eaque, aperiam vel
-                    aliquam quis odit. Facere impedit atque placeat possimus? Dignissimos quas doloribus magni quod.
-                    Consequuntur, voluptate quis.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum beatae ratione eaque laudantium
-                    rerum saepe, corrupti obcaecati quam debitis unde officia. Accusantium adipisci, quibusdam
-                    necessitatibus possimus minus deleniti? Non, repellat.</p>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ullam excepturi eaque, aperiam vel
-                    aliquam quis odit. Facere impedit atque placeat possimus? Dignissimos quas doloribus magni quod.
-                    Consequuntur, voluptate quis.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum beatae ratione eaque laudantium
-                    rerum saepe, corrupti obcaecati quam debitis unde officia. Accusantium adipisci, quibusdam
-                    necessitatibus possimus minus deleniti? Non, repellat.</p>
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ullam excepturi eaque, aperiam vel
-                    aliquam quis odit. Facere impedit atque placeat possimus? Dignissimos quas doloribus magni quod.
-                    Consequuntur, voluptate quis.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum beatae ratione eaque laudantium
-                    rerum saepe, corrupti obcaecati quam debitis unde officia. Accusantium adipisci, quibusdam
-                    necessitatibus possimus minus deleniti? Non, repellat.</p>
+            <section class="about-content">
+                <h2 class="p-4 text-3xl font-bold">How it Works</h2>
+                <ol class="ml-7">
+                    <li>Look through the wines list to find the wine you want to rate. If you can't find it, you can add
+                        it to
+                        our database.</li>
+                    <li>Rate the wine: Once you find the wine, rate it based on your experience. We ask for a 1-5 star
+                        rating, as well
+                        as a brief description of your thoughts.</li>
+                    <li>Save the wine: After rating a wine, save it to your personal list of wines. This way, you can
+                        easily remember
+                        which wines you've tried and what you thought of them.</li>
+                    <li>Discover new wines: Use our platform to discover new wines based on user ratings and reviews.
+                        You can also
+                        browse our featured wines.</li>
+                </ol>
 
 
-                <h2>Section 2</h2>
-                <ul>
-                    <li>aethsrthdt</li>
-                    <li>arthasrthdrtha
+                <h2 class="p-4 text-3xl font-bold">Our Values</h2>
+                <ul class="ml-7">
+                    <li>We believe that everyone deserves to enjoy a good glass of wine, regardless of their budget.
                     </li>
-                    <li>Iarthatrhartwrtgf
-                    </li>
-                    <li>Waerlkhnflgmnkdlgnhklfg
-                    </li>
+                    <li>We are committed to providing our customers with honest, user-generated ratings and reviews to
+                        help them make
+                        informed decisions about their wine choices.</li>
+                    <li>We value community and strive to create a space where wine lovers can share their experiences
+                        and learn from one
+                        another.</li>
+                    <li>We believe in the importance of accessibility and aim to make our platform easy to use for
+                        anyone looking to
+                        explore the world of wine.</li>
                 </ul>
             </section>
         </main>
