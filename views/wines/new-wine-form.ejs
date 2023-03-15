@@ -10,44 +10,87 @@
     <%- include('../partials/nav.ejs') %>
 
         <h2 class="p-4 text-3xl font-bold">Add a New Wine</h2>
-        <div class="form-control shadow-xl border-primary w-2/3 my-0 mx-auto p-5">
+        <div class="form-control bg-base-200 border-primary w-2/3 mt-5 mb-9 mx-auto p-14 rounded">
             <form method="POST" action="/wines">
                 <!-- Name input -->
-                <label class="label" for="name"> <span class="label-text">Name: </span></label>
-                <input type="text" class="input input-bordered" id="name" name="name" required>
+                <label class="label" for="name"> <span class="label-text">Wine Name: </span></label>
+                <input type="text" class="input input-bordered w-full" id="name" name="name" required>
                 <br>
                 <!-- Style input -->
+
                 <label class="label" for="style"> <span class="label-text">Style: </span></label>
-                <select id="style" name="style" value="0" required>
+                <!-- <select class="select select-bordered" id="style" name="style" value="0" required>
+                    <option disabled selected>Select One</option>
                     <option value="Red">Red</option>
                     <option value="White">White</option>
                     <option value="Rose">Rose</option>
                     <option value="Sparkling">Sparkling</option>
+                </select> -->
+                <div class="w-1/6">
+                    <div class="form-control max-w-xs pl-5">
+                        <label class="label cursor-pointer">
+                            <input type="radio" name="style" id="style" name="style" value="Red"
+                                class="radio radio-primary" checked />
+                            <span class="label-text">Red</span>
 
-                </select>
+                        </label>
+                    </div>
+                    <div class="form-control max-w-xs pl-5">
+                        <label class="label cursor-pointer ">
+                            <input type="radio" name="style" id="style" name="style" value="White"
+                                class="radio radio-primary" />
+                            <span class="label-text">White</span>
+
+                        </label>
+                    </div>
+                    <div class="form-control max-w-xs pl-5">
+                        <label class="label cursor-pointer ">
+                            <input type="radio" name="style" id="style" name="style" value="Rose"
+                                class="radio radio-primary" />
+                            <span class="label-text">Rose</span>
+
+                        </label>
+                    </div>
+                    <div class="form-control max-w-xs pl-5">
+                        <label class="label cursor-pointer ">
+                            <input type="radio" name="style" id="style" name="style" value="Sparkling"
+                                class="radio radio-primary" />
+                            <span class="label-text">Sparkling</span>
+
+                        </label>
+                    </div>
+                </div>
                 <br>
                 <!-- Type input -->
                 <label class="label" for="type"> <span class="label-text">Type:</span></label>
-                <input type="text" class="input input-bordered" id="type" name="type" placeholder="Cabernet Sauvignon"
-                    required>
+                <input type="text" class="input input-bordered w-full" id="type" name="type"
+                    placeholder="e.g. Cabernet Sauvignon" required>
                 <br>
                 <!-- Producer input -->
                 <label class="label" for="producer"> <span class="label-text">Producer:</span></label>
-                <input type="text" class="input input-bordered" id="producer" name="producer" required>
+                <input type="text" class="input input-bordered w-full" id="producer" name="producer" required>
                 <br>
                 <!-- Region input -->
                 <label class="label" for="region"> <span class="label-text">Region:</span></label>
-                <input type="text" class="input input-bordered" id="region" name="region" required>
+                <input type="text" class="input input-bordered w-full" id="region" name="region" required>
                 <br>
                 <!-- Year Input -->
                 <label class="label" for="year"> <span class="label-text">Year:</span></label>
                 <input type="number" class="input input-bordered" id="year" name="year" min="1900" max="2023" required>
                 <br>
                 <!-- Rating input -->
-                <label class="label" for="averageRating"> <span class="label-text">Rating:</span></label>
+                <!-- <label class="label" for="averageRating"> <span class="label-text">Rating:</span></label>
                 <input type="number" class="input input-bordered" id="averageRating" name="averageRating" step="0.1"
                     min="0" max="5" placeholder="4.0" required>
-                <br>
+                <br> -->
+                <label class="label" for="averageRating"> <span class="label-text">Rating:</span></label>
+                <div class="rating gap-1">
+                    <input type="radio" value="1" name="averageRating" class="mask mask-heart bg-red-400" />
+                    <input type="radio" value="2" name="averageRating" class="mask mask-heart bg-orange-400" checked />
+                    <input type="radio" value="3" name="averageRating" class="mask mask-heart bg-yellow-400" />
+                    <input type="radio" value="4" name="averageRating" class="mask mask-heart bg-lime-400" />
+                    <input type="radio" value="5" name="averageRating" class="mask mask-heart bg-green-400" />
+                </div>
                 <!-- ABV input -->
                 <label class="label" for="abv"> <span class="label-text">ABV:</span></label>
                 <input type="number" class="input input-bordered" id="abv" name="abv" min="0" step="0.01"
@@ -55,22 +98,16 @@
                 <br>
                 <!-- Photo input -->
                 <label class="label" for="photo"> <span class="label-text">Photo (URL):</span></label>
-                <input type="text" class="input input-bordered" id="photo" name="photo" required>
+                <input type="text" class="input input-bordered w-full" id="photo" name="photo" required>
                 <br>
                 <!-- Description input -->
                 <label class="label" for="description"> <span class="label-text">Description:</span></label>
-                <textarea class="textarea textarea-bordered" id="description" name="description" required></textarea>
+                <textarea class="textarea textarea-bordered textarea-md w-full" id="description" name="description"
+                    required></textarea>
                 <br>
-                <!-- isFeatured input -->
-                <label class="label" for="isFeatured"> <span class="label-text">Do you want to feature this wine on the
-                        home page?</span></label>
-                <br>
-                <select class="select select-bordered" id="isFeatured" name="isFeatured">
-                    <option value="true">Yes</option>
-                    <option value="false">No </option>
-                    <div>
-                        <input class="btn btn-primary" type="submit" value="Add New Wine">
-                    </div>
+                <div class="pt-4">
+                    <input class="btn btn-primary" type="submit" value="Add New Wine">
+                </div>
             </form>
         </div>
         <%- include('../partials/footer.ejs') %>
