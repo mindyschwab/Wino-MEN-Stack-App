@@ -1,0 +1,27 @@
+<div class="wine-card card max-w-4xl bg-base-100 shadow-xl m-6">
+    <figure>
+        <img class="wine-image" src=" <%=wine.photo %>" alt="Wine
+                                Image">
+    </figure>
+    <div class="card-body ">
+        <h2 class="card-title">
+            <%= wine.name %>
+        </h2>
+        <p>
+            <%= wine.style %>
+        </p>
+        <p>
+            <%= wine.type %>
+        </p>
+        <p>
+            <%= wine.producer %>
+        </p>
+        <p>Rating: <%= wine.averageRating %>/5
+        </p>
+        <div class="card-actions justify-end">
+            <button class="btn btn-primary"><a href="/wines/<%= wine._id %>">Learn
+                    More</a></button>
+        </div>
+    </div>
+
+</div>
