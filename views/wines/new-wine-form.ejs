@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="emerald">
 
 <head>
     <%- include('../partials/head.ejs', {title: 'Add a Listing | Ceramics Express Store' }) %>
@@ -9,66 +9,70 @@
 <body>
     <%- include('../partials/nav.ejs') %>
 
-        <h1 class="new-wine-h1">Add a New Wine</h1>
+        <h2 class="p-4 text-3xl font-bold">Add a New Wine</h2>
+        <div class="form-control shadow-xl border-primary w-2/3 my-0 mx-auto p-5">
+            <form method="POST" action="/wines">
+                <!-- Name input -->
+                <label class="label" for="name"> <span class="label-text">Name: </span></label>
+                <input type="text" class="input input-bordered" id="name" name="name" required>
+                <br>
+                <!-- Style input -->
+                <label class="label" for="style"> <span class="label-text">Style: </span></label>
+                <select id="style" name="style" value="0" required>
+                    <option value="Red">Red</option>
+                    <option value="White">White</option>
+                    <option value="Rose">Rose</option>
+                    <option value="Sparkling">Sparkling</option>
 
-        <form method="POST" action="/wines">
-            <!-- Name input -->
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <br>
-            <!-- Style input -->
-            <label for="style">Style:</label>
-            <select id="style" name="style" value="0" required>
-                <option value="Red">Red</option>
-                <option value="White">White</option>
-                <option value="Rose">Rose</option>
-                <option value="Sparkling">Sparkling</option>
-
-            </select>
-            <br>
-            <!-- Type input -->
-            <label for="type">Type:</label>
-            <input type="text" id="type" name="type" placeholder="Cabernet Sauvignon" required>
-            <br>
-            <!-- Producer input -->
-            <label for="producer">Producer:</label>
-            <input type="text" id="producer" name="producer" required>
-            <br>
-            <!-- Region input -->
-            <label for="region">Region:</label>
-            <input type="text" id="region" name="region" required>
-            <br>
-            <!-- Year Input -->
-            <label for="year">Year:</label>
-            <input type="number" id="year" name="year" min="1900" max="2023" required>
-            <br>
-            <!-- Rating input -->
-            <label for="averageRating">Rating:</label>
-            <input type="number" id="averageRating" name="averageRating" step="0.1" min="0" max="5" placeholder="4.0"
-                required>
-            <br>
-            <!-- ABV input -->
-            <label for="abv">ABV:</label>
-            <input type="number" id="abv" name="abv" min="0" step="0.01" placeholder="12.0" required>
-            <br>
-            <!-- Photo input -->
-            <label for="photo">Photo (URL):</label>
-            <input type="text" id="photo" name="photo" required>
-            <br>
-            <!-- Description input -->
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" required></textarea>
-            <br>
-            <!-- isFeatured input -->
-            <label for="isFeatured">Do you want to feature this wine on the home page?</label>
-            <br>
-            <select id="isFeatured" name="isFeatured">
-                <option value="true">Yes</option>
-                <option value="false">No </option>
-
-                <input type="submit" value="Add New Wine">
-        </form>
-
+                </select>
+                <br>
+                <!-- Type input -->
+                <label class="label" for="type"> <span class="label-text">Type:</span></label>
+                <input type="text" class="input input-bordered" id="type" name="type" placeholder="Cabernet Sauvignon"
+                    required>
+                <br>
+                <!-- Producer input -->
+                <label class="label" for="producer"> <span class="label-text">Producer:</span></label>
+                <input type="text" class="input input-bordered" id="producer" name="producer" required>
+                <br>
+                <!-- Region input -->
+                <label class="label" for="region"> <span class="label-text">Region:</span></label>
+                <input type="text" class="input input-bordered" id="region" name="region" required>
+                <br>
+                <!-- Year Input -->
+                <label class="label" for="year"> <span class="label-text">Year:</span></label>
+                <input type="number" class="input input-bordered" id="year" name="year" min="1900" max="2023" required>
+                <br>
+                <!-- Rating input -->
+                <label class="label" for="averageRating"> <span class="label-text">Rating:</span></label>
+                <input type="number" class="input input-bordered" id="averageRating" name="averageRating" step="0.1"
+                    min="0" max="5" placeholder="4.0" required>
+                <br>
+                <!-- ABV input -->
+                <label class="label" for="abv"> <span class="label-text">ABV:</span></label>
+                <input type="number" class="input input-bordered" id="abv" name="abv" min="0" step="0.01"
+                    placeholder="12.0" required>
+                <br>
+                <!-- Photo input -->
+                <label class="label" for="photo"> <span class="label-text">Photo (URL):</span></label>
+                <input type="text" class="input input-bordered" id="photo" name="photo" required>
+                <br>
+                <!-- Description input -->
+                <label class="label" for="description"> <span class="label-text">Description:</span></label>
+                <textarea class="textarea textarea-bordered" id="description" name="description" required></textarea>
+                <br>
+                <!-- isFeatured input -->
+                <label class="label" for="isFeatured"> <span class="label-text">Do you want to feature this wine on the
+                        home page?</span></label>
+                <br>
+                <select class="select select-bordered" id="isFeatured" name="isFeatured">
+                    <option value="true">Yes</option>
+                    <option value="false">No </option>
+                    <div>
+                        <input class="btn btn-primary" type="submit" value="Add New Wine">
+                    </div>
+            </form>
+        </div>
         <%- include('../partials/footer.ejs') %>
 </body>
 
