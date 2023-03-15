@@ -48,6 +48,7 @@ app.use(connectLiveReload());
 app.use(express.urlencoded({ extended: true }));
 // Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
 app.use(methodOverride('_method'));
+app.use(express.static('dist'));
 
 /* Mount routes
 --------------------------------------------------------------- */
