@@ -33,18 +33,18 @@ Who are Wino users?
 
 |       **URL**       | **REST Route** | **HTTP Verb** | **CRUD Action** |   **EJS View(s)**             | **Created Yet?**  |
 | ------------------- | -------------- | ------------- | --------------- | ----------------------------- | ----------------- |
-| /                   | N/A            | GET           | read            | home.ejs                      | NO                |
-| /wines              | index          | GET           | read            | wines-index.ejs               | NO                |
-| /wines/:id          | show           | GET           | read            | wines-details.ejs, 404.ejs    | NO, NO            |
-| /wines/new          | new            | GET           | read            | new-wine-form.ejs             | NO                |
-| /wines              | create         | POST          | create          |                               | NO                |
-| /wines/:id/edit     | edit           | GET           | read            | edit-wines.ejs                | NO                |
-| /wines/:id          | update         | PATCH/PUT     | update          |                               | NO                |
-| /wines/:id          | destroy        | DELETE        | delete          |                               | NO                |
-| /*                  | N/A            | GET           | N/A             | 404.ejs                       | NO                |
-| /seed               | N/A            | GET           | N/A             | N/A                           | NO                |
-| /reviews/new        | new            | GET           | read            | reviews/new-review-form.ejs   | NO                |
-| /reviews            | create         | POST          | create          |                               | NO                |
+| /                   | N/A            | GET           | read            | home.ejs                      | YES               |
+| /wines              | index          | GET           | read            | wines-index.ejs               | YES               |
+| /wines/:id          | show           | GET           | read            | wines-details.ejs, 404.ejs    | YES, YES          |
+| /wines/new          | new            | GET           | read            | new-wine-form.ejs             | YES               |
+| /wines              | create         | POST          | create          |                               | YES                |
+| /wines/:id/edit     | edit           | GET           | read            | edit-wines.ejs                | YES                |
+| /wines/:id          | update         | PATCH/PUT     | update          |                               | YES                |
+| /wines/:id          | destroy        | DELETE        | delete          |                               | YES                |
+| /*                  | N/A            | GET           | N/A             | 404.ejs                       | YES                |
+| /seed               | N/A            | GET           | N/A             | N/A                           | YES                |
+| /reviews/new        | new            | GET           | read            | reviews/new-review-form.ejs   | YES                |
+| /reviews            | create         | POST          | create          |                               | YES                |
 
 ## Wireframes 
  Please note that this is a gif
