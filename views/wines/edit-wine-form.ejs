@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="emerald">
 
 <head>
     <%- include('../partials/head.ejs', {title: `Edit ${wine.name} | WINO`}) %>
@@ -8,83 +8,124 @@
 
 <body>
     <%- include('../partials/nav.ejs') %>
+        <h2 class="p-4 text-3xl font-bold">Edit Wine Details Form</h2>
+        <div class="form-control bg-base-200 border-primary w-2/3 mt-5 mb-9 mx-auto p-14 rounded">
+            <form method="POST" action="/wines/<%= wine._id %>?_method=PUT">
+                <!-- Name input -->
+                <label class="label" for="name"> <span class="label-text">Wine Name: </span></label>
+                <input type="text" class="input input-bordered w-full" id="name" name="name" value="<%= wine.name %>"
+                    required>
+                <br>
 
-        <h1>Edit Wine Details Form</h1>
-        <form method="POST" action="/wines/<%= wine._id %>?_method=PUT">
-            <!-- Name input -->
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="<%= wine.name %>" required>
-            <br>
-            <!-- Style input -->
-            <label for="style">Style:</label>
-            <select id="style" name="style" value="<%= wine.style %>" required>
-
-                <% if (wine.style==="Red" ) { %>
-                    <option value="Red" selected>Red</option>
-                    <option value="White">White</option>
-                    <option value="Rose">Rose</option>
-                    <option value="Sparkling">Sparkling</option>
-
-                    <% } else if (wine.style==="White" ) { %>
-                        <option value="Red">Red</option>
-                        <option value="White" selected>White</option>
+                <!-- <label for="style">Style:</label>
+                <select id="style" name="style" value="<%= wine.style %>" required>
+                
+                    <% if (wine.style==="Red" ) { %>
+                        <option value="Red" selected>Red</option>
+                        <option value="White">White</option>
                         <option value="Rose">Rose</option>
                         <option value="Sparkling">Sparkling</option>
-
-                        <% } else if (wine.style==="Rose" ) { %>
+                
+                        <% } else if (wine.style==="White" ) { %>
                             <option value="Red">Red</option>
-                            <option value="White">White</option>
-                            <option value="Rose" selected>Rose</option>
+                            <option value="White" selected>White</option>
+                            <option value="Rose">Rose</option>
                             <option value="Sparkling">Sparkling</option>
-
-                            <% } else { %>
+                
+                            <% } else if (wine.style==="Rose" ) { %>
                                 <option value="Red">Red</option>
                                 <option value="White">White</option>
                                 <option value="Rose" selected>Rose</option>
-                                <option value="Sparkling" selected></option>>Sparkling</option>
-                                <% } %>
+                                <option value="Sparkling">Sparkling</option>
+                
+                                <% } else { %>
                                     <option value="Red">Red</option>
                                     <option value="White">White</option>
-                                    <option value="Rose">Rose</option>
-                                    <option value="Sparkling">Sparkling</option>
-            </select>
-            <br>
-            <!-- Type input -->
-            <label for="type">Type:</label>
-            <input type="text" id="type" name="type" value="<%= wine.type %>" required>
-            <br>
-            <!-- Producer input -->
-            <label for="producer">Producer:</label>
-            <input type="text" id="producer" name="producer" value="<%= wine.producer %>" required>
-            <br>
-            <!-- Region input -->
-            <label for="region">Region:</label>
-            <input type="text" id="region" name="region" value="<%= wine.region %>" required>
-            <br>
-            <!-- Year Input -->
-            <label for="year">Year:</label>
-            <input type="number" id="year" name="year" min="1900" max="2023" value="<%= wine.year %>" required>
-            <br>
-            <!-- Rating input -->
-            <label for="averageRating">Rating:</label>
-            <input type="number" id="averageRating" name="averageRating" step="0.1" min="0" max="5"
-                value="<%= wine.averageRating %>" required>
-            <br>
-            <!-- ABV input -->
-            <label for="abv">ABV:</label>
-            <input type="number" id="abv" name="abv" min="0" step="0.01" value="<%= wine.abv %>" required>
-            <br>
-            <!-- Photo input -->
-            <label for="photo">Photo (URL):</label>
-            <input type="text" id="photo" name="photo" value="<%= wine.photo %>" required>
-            <br>
-            <!-- Description input -->
-            <label for="description">Description:</label>
-            <textarea id="description" name="description" required><%= wine.description %> required></textarea>
-            <br>
+                                    <option value="Rose" selected>Rose</option>
+                                    <option value="Sparkling" selected></option>>Sparkling</option>
+                                    <% } %>
+                                        <option value="Red">Red</option>
+                                        <option value="White">White</option>
+                                        <option value="Rose">Rose</option>
+                                        <option value="Sparkling">Sparkling</option>
+                </select>
+                <br> -->
+                <!-- Style input -->
 
-            <input type="submit" value="Update Wine Data">
-        </form>
+                <label class="label" for="style"> <span class="label-text">Style: </span></label>
+                <select class="select select-bordered" id="style" name="style" value="<%= wine.style %>" required>
+                    <% if (wine.style==="Red" ) { %>
+                        <option value="Red" selected>Red</option>
+                        <option value="White">White</option>
+                        <option value="Rose">Rose</option>
+                        <option value="Sparkling">Sparkling</option>
+
+                        <% } else if (wine.style==="White" ) { %>
+                            <option value="Red">Red</option>
+                            <option value="White" selected>White</option>
+                            <option value="Rose">Rose</option>
+                            <option value="Sparkling">Sparkling</option>
+
+                            <% } else if (wine.style==="Rose" ) { %>
+                                <option value="Red">Red</option>
+                                <option value="White">White</option>
+                                <option value="Rose" selected>Rose</option>
+                                <option value="Sparkling">Sparkling</option>
+
+                                <% } else { %>
+                                    <option value="Red">Red</option>
+                                    <option value="White">White</option>
+                                    <option value="Rose" selected>Rose</option>
+                                    <option value="Sparkling" selected></option>>Sparkling</option>
+                                    <% } %>
+
+                </select>
+
+                <!-- Type input -->
+                <label class="label" for="type"> <span class="label-text">Type:</span></label>
+                <input type="text" class="input input-bordered w-full" id="type" name="type" value="<%= wine.type %>"
+                    required>
+                <br>
+                <!-- Producer input -->
+                <label class="label" for="producer"> <span class="label-text">Producer:</span></label>
+                <input type="text" class="input input-bordered w-full" id="producer" name="producer"
+                    value="<%= wine.producer %>" required>
+                <br>
+                <!-- Region input -->
+                <label class="label" for="region"> <span class="label-text">Region:</span></label>
+                <input type="text" class="input input-bordered w-full" id="region" name="region"
+                    value="<%= wine.region %>" required>
+                <br>
+                <!-- Year Input -->
+                <label class="label" for="year"> <span class="label-text">Year:</span></label>
+                <input type="number" class="input input-bordered" id="year" name="year" min="1900" max="2023"
+                    value="<%= wine.year %>" required>
+                <br>
+                <!-- Rating input -->
+                <label class="label" for="averageRating">Rating:</label>
+                <input type="number" class="input input-bordered" id="averageRating" name="averageRating" step="0.1"
+                    min="0" max="5" value="<%= wine.averageRating %>" required>
+                <br>
+                <!-- ABV input -->
+                <label class="label" for="abv"> <span class="label-text">ABV:</span></label>
+                <input type="number" class="input input-bordered" id="abv" name="abv" min="0" step="0.01"
+                    value="<%= wine.abv %>" required>
+                <br>
+                <!-- Photo input -->
+                <label class="label" for="photo"> <span class="label-text">Photo (URL):</span></label>
+                <input type="text" class="input input-bordered w-full" id="photo" name="photo" value="<%= wine.photo %>"
+                    required>
+                <br>
+                <!-- Description input -->
+                <label class="label" for="description"> <span class="label-text">Description:</span></label>
+                <textarea class="textarea textarea-bordered textarea-md w-full" id="description" name="description"
+                    required><%= wine.description %></textarea>
+                <br>
+                <div class="pt-4">
+                    <input class="btn btn-primary" type="submit" value="Update Wine Details">
+                </div>
+            </form>
+        </div>
 
         <%- include('../partials/footer.ejs') %>
 </body>
