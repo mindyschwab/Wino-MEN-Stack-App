@@ -8,7 +8,6 @@ const wines = [
         producer: "Chateau Montelena",
         abv: 14.2,
         description: "A classic Napa Cabernet with flavors of black currant, cassis, and cedar.",
-        averageRating: 4.7,
         photo: "https://images.vivino.com/thumbs/EbBb5X-uSkuhaCVnHZ-LHA_pb_600x600.png",
         isFeatured: true,
         reviews: [
@@ -35,7 +34,7 @@ const wines = [
         producer: "Rombauer Vineyards",
         abv: 14.5,
         description: "A rich and creamy Chardonnay with notes of butter, vanilla, and tropical fruit.",
-        averageRating: 4.5,
+
         photo: "https://dandm.com/image/product/11457.jpg",
         isFeatured: false,
         reviews: [
@@ -62,7 +61,6 @@ const wines = [
         producer: "Domaine Serene",
         abv: 14.5,
         description: "An elegant Pinot Noir with flavors of cherry, raspberry, and spice.",
-        averageRating: 4.9,
         photo: "https://www.centralwinemerchants.com/images/labels/domaine-serene-pinot-noir-willamette-valley-evenstad-reserve.jpg",
         isFeatured: true,
         reviews: [
@@ -81,6 +79,32 @@ const wines = [
         ]
     },
     {
+        style: "Sparkling",
+        type: "Brut",
+        name: "Jaume Serra Cristalino Brut",
+        year: 2020,
+        region: "Penedes, Spain",
+        producer: "Jaume Serra",
+        abv: 11.5,
+        description: "This Spanish Cava is crisp and clean, with citrus and apple flavors, and a hint of toastiness. Perfect for toasting or enjoying with seafood or light appetizers.",
+        photo: "https://images.vivino.com/thumbs/C_cGpdwNQMKDCCk5Vnj3yA_pb_x600.png",
+        isFeatured: false,
+        reviews: [
+            {
+                reviewerName: "John Doe",
+                rating: 4,
+                title: "Great value for the price",
+                content: "I was pleasantly surprised by this Cava. It has a nice balance of fruitiness and acidity, and is a great value for the price."
+            },
+            {
+                reviewerName: "Jane Smith",
+                rating: 3,
+                title: "Decent but not amazing",
+                content: "This Cava is decent but not amazing. It's good for the price, but I've had better."
+            }
+        ]
+    },
+    {
         style: "Red",
         type: "Merlot",
         name: "Chateau Ste. Michelle Merlot",
@@ -89,9 +113,8 @@ const wines = [
         producer: "Chateau Ste. Michelle",
         abv: 14,
         description: "A medium-bodied Merlot with flavors of black cherry, plum, and a hint of vanilla.",
-        averageRating: 4.5,
         photo: "https://images.vivino.com/thumbs/DygMHm5zSi2qXX6I0Hk90A_pb_600x600.png",
-        isFeatured: true,
+        isFeatured: false,
         reviews: [
             {
                 reviewerName: "John Doe",
@@ -116,7 +139,6 @@ const wines = [
         producer: "Kendall-Jackson",
         abv: 13.5,
         description: "A full-bodied Chardonnay with flavors of apple, pear, and a hint of oak.",
-        averageRating: 4,
         photo: "https://images.vivino.com/thumbs/20ykzlp3ToqV0sgtOzH3-A_pb_x600.png",
         isFeatured: false,
         reviews: [
@@ -137,9 +159,8 @@ const wines = [
         producer: "Robert Mondavi",
         abv: 15,
         description: "A full-bodied Cabernet Sauvignon with flavors of blackcurrant, vanilla, and a hint of tobacco.",
-        averageRating: 4.2,
         photo: "https://images.vivino.com/thumbs/DygMHm5zSi2qXX6I0Hk90A_pb_600x600.png",
-        isFeatured: true,
+        isFeatured: false,
         reviews: [
             {
                 reviewerName: "Jessica Lee",
@@ -156,6 +177,32 @@ const wines = [
         ]
     },
     {
+        style: "Sparkling",
+        type: "Extra Dry",
+        name: "Barefoot Bubbly Extra Dry",
+        year: 2021,
+        region: "California, USA",
+        producer: "Barefoot",
+        abv: 11,
+        description: "This California sparkling wine has flavors of green apple, jasmine, and kiwi. It's a great choice for celebrations or just enjoying with friends.",
+        photo: "https://www.shoppersvineyard.com/images/sites/shoppersvineyard/labels/barefoot-bubbly-ex-dry_1.jpg",
+        isFeatured: false,
+        reviews: [
+            {
+                reviewerName: "Sarah Johnson",
+                rating: 5,
+                title: "Love it!",
+                content: "This is my go-to sparkling wine. It's light and refreshing, and I love the flavors of green apple and kiwi."
+            },
+            {
+                reviewerName: "Michael Lee",
+                rating: 2,
+                title: "Too sweet for me",
+                content: "I found this wine to be too sweet for my taste. I prefer drier sparkling wines."
+            }
+        ]
+    },
+    {
         style: 'Red',
         type: 'Cabernet Sauvignon',
         name: 'Chateau Margaux',
@@ -164,7 +211,6 @@ const wines = [
         producer: 'Chateau Margaux',
         abv: 13.5,
         description: 'Full-bodied, with ripe black fruit flavors and a long finish.',
-        averageRating: 4.5,
         photo: 'https://images.vivino.com/thumbs/DygMHm5zSi2qXX6I0Hk90A_pb_600x600.png',
         isFeatured: true,
         reviews: [
@@ -191,9 +237,8 @@ const wines = [
         producer: 'Kistler Vineyards',
         abv: 14.5,
         description: 'A rich, buttery Chardonnay with notes of vanilla and caramel.',
-        averageRating: 4.0,
         photo: 'https://images.vivino.com/thumbs/oUpfXZUcTgSEUBCwGlRNJA_pb_600x600.png',
-        isFeatured: false,
+        isFeatured: true,
         reviews: [
             {
                 reviewerName: 'James Brown',
@@ -218,7 +263,6 @@ const wines = [
         producer: "Trader Joe's Winery",
         abv: 14.5,
         description: "Full-bodied with rich flavors of dark fruit and vanilla.",
-        averageRating: 4.5,
         photo: "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/52078.png/jcr:content/renditions/cq5dam.web.1280.1280",
         isFeatured: true,
         reviews: [
@@ -237,33 +281,6 @@ const wines = [
         ]
     },
     {
-        style: "White",
-        type: "Sauvignon Blanc",
-        name: "Trader Joe's Reserve",
-        year: 2020,
-        region: "Marlborough",
-        producer: "Trader Joe's Winery",
-        abv: 13,
-        description: "Bright and refreshing with citrus and tropical fruit notes.",
-        averageRating: 4,
-        photo: "https://s3.r29static.com/bin/entry/29a/x,80/1819339/image.jpg",
-        isFeatured: false,
-        reviews: [
-            {
-                reviewerName: "Mike",
-                rating: 4,
-                title: "Good value for the price",
-                content: "This wine is a great value. It's not the best Sauv Blanc I've ever had, but it's good for the price."
-            },
-            {
-                reviewerName: "Sarah",
-                rating: 3.5,
-                title: "Decent but not outstanding",
-                content: "This wine is decent, but I wouldn't say it's outstanding. It's good for a casual weeknight dinner."
-            }
-        ]
-    },
-    {
         style: "Red",
         type: "Pinot Noir",
         name: "Trader Joe's Platinum Reserve",
@@ -272,24 +289,101 @@ const wines = [
         producer: "Trader Joe's Winery",
         abv: 13.5,
         description: "Silky and smooth with flavors of cherry and spice.",
-        averageRating: 4,
         photo: "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/72594.png/jcr:content/renditions/cq5dam.web.1280.1280",
         isFeatured: false,
         reviews: [
             {
                 reviewerName: "Emily",
-                rating: 4.5,
+                rating: 4,
                 title: "Great Pinot for the price",
                 content: "I'm usually skeptical of cheap Pinots, but this one is really good. Smooth and easy to drink."
             },
             {
                 reviewerName: "Mark",
-                rating: 3.5,
+                rating: 3,
                 title: "Decent for the price",
                 content: "This wine is decent, but not outstanding. It's good for a casual weeknight dinner."
             }
         ]
     },
+    {
+        style: "Red",
+        type: "Cabernet Sauvignon",
+        name: "Three Thieves",
+        year: 2018,
+        region: "California",
+        producer: "Three Thieves",
+        abv: 13.5,
+        description: "A rich and full-bodied wine with flavors of blackberry and cassis.",
+        photo: "https://www.totalwine.com/dynamic/490x/media/sys_master/twmmedia/hdc/hb7/16012958728222.png",
+        isFeatured: false,
+        reviews: [
+            {
+                reviewerName: "John Doe",
+                rating: 4,
+                title: "Excellent value",
+                content: "I was pleasantly surprised by how good this wine tasted given the low price."
+            },
+            {
+                reviewerName: "Jane Smith",
+                rating: 3,
+                title: "Decent wine",
+                content: "Not the best Cab I've had, but for the price, it's a good value."
+            }
+        ]
+    },
+    {
+        style: "White",
+        type: "Pinot Grigio",
+        name: "Santa Margherita",
+        year: 2019,
+        region: "Italy",
+        producer: "Santa Margherita",
+        abv: 12.5,
+        description: "A crisp and refreshing wine with notes of citrus and green apple.",
+        photo: "https://www.wespeakwine.com/Shared/Images/Product/Santa-Margherita-Pinot-Grigio-Alto-Adige-2016-750ML/santamargherita_pg_bottle.jpg",
+        isFeatured: false,
+        reviews: [
+            {
+                reviewerName: "Tom Jones",
+                rating: 5,
+                title: "Delicious",
+                content: "One of my favorite Pinot Grigios. It's light and refreshing with a nice balance of acidity."
+            },
+            {
+                reviewerName: "Amy Lee",
+                rating: 3,
+                title: "Not my favorite",
+                content: "I found this wine to be a bit too acidic for my taste, but it might be a good fit for someone who likes a more tart wine."
+            }
+        ]
+    },
+    {
+        style: "Rose",
+        type: "Grenache",
+        name: "Dark Horse",
+        year: 2020,
+        region: "California",
+        producer: "Dark Horse",
+        abv: 11.5,
+        description: "A light and fruity wine with notes of strawberry and raspberry.",
+        photo: "https://www.totalwine.com/dynamic/490x/media/sys_master/twmmedia/h5c/hf6/13411422208030.png",
+        isFeatured: true,
+        reviews: [
+            {
+                reviewerName: "Emily Davis",
+                rating: 4,
+                title: "Nice summer wine",
+                content: "This is a great wine to sip on a hot day. It's refreshing and not too sweet."
+            },
+            {
+                reviewerName: "Mark Johnson",
+                rating: 2,
+                title: "Disappointing",
+                content: "I didn't enjoy this wine at all. It tasted too watered down and lacked depth."
+            }
+        ]
+    }
 ];
 // Export the seed data to `models/index.js`
 module.exports = wines;

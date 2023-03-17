@@ -9,8 +9,8 @@
 <body>
     <%- include('./partials/nav.ejs') %>
 
-        <main>
-            <div class="hero min-h-16 "
+        <main class="min-h-screen">
+            <div class="hero min-h-16"
                 style="background-image: url(https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);">
                 <div class=" hero-overlay bg-opacity-60"></div>
                 <div class="hero-content text-center text-neutral-content">
@@ -28,9 +28,11 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <br>
 
-            <section class="about-content">
-                <h2 class="p-4 text-3xl font-bold">How it Works</h2>
+            <section class="about-content w-2/3 mx-auto">
+                <h2 class="p-4 text-3xl font-bold">How It Works</h2>
                 <ol class="ml-7">
                     <li>Look through the wines list to find the wine you want to rate. If you can't find it, you can add
                         it to
@@ -45,8 +47,9 @@
                         You can also
                         browse our featured wines.</li>
                 </ol>
+            </section>
 
-
+            <section class="about-content w-2/3 mx-auto">
                 <h2 class="p-4 text-3xl font-bold">Our Values</h2>
                 <ul class="ml-7">
                     <li>We believe that everyone deserves to enjoy a good glass of wine, regardless of their budget.
@@ -63,6 +66,8 @@
                 </ul>
             </section>
         </main>
+        <br>
+        <br>
 
         <%- include('./partials/footer.ejs') %>
 </body>

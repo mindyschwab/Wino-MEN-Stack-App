@@ -3240,6 +3240,10 @@ html {
   margin-bottom: 2.25rem;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -3250,6 +3254,10 @@ html {
 
 .mt-3 {
   margin-top: 0.75rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mt-5 {
@@ -3414,6 +3422,11 @@ html {
   text-align: center;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -3422,11 +3435,6 @@ html {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -3474,12 +3482,12 @@ html {
 /* Wine Card */
 
 .wine-image {
-  max-width: 425px;
-  max-height: 425px;
+  max-width: 420px;
+  max-height: 420px;
 }
 
 .wine-card {
-  height: 700px;
+  height: 710px;
 }
 
 /* Wine Details */

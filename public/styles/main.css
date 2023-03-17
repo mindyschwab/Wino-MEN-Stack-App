@@ -4,12 +4,12 @@
 
 /* Wine Card */
 .wine-image {
-    max-width: 425px;
-    max-height: 425px;
+    max-width: 420px;
+    max-height: 420px;
 }
 
 .wine-card {
-    height: 700px;
+    height: 675px;
 }
 
 /* Wine Details */

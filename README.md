@@ -70,10 +70,10 @@ Who are Wino users?
 ## Stretch Goals (How your specific project look & behave *AFTER* you accomplish MVP)
 - allow users to create lists that users can add their favorite wines to
 - Allow users to "favorite" wines which add them to a list that they can access
-- EJS partial for wine card
+- EJS partial for wine card: complete
 - Home page: load more wines on scroll or carosel of featured wines 
 - Wine ratings: add all ratings and average, display on details page
 - Ability to edit wine reviews 
-- Use a new CSS framework like Skeleton or Materialize
+- Use a new CSS framework like Skeleton or Materialize: complete - used tailwind and DaisyUI
 
  ## Descriptions of any Unsolved problems or major hurdles you had to overcome

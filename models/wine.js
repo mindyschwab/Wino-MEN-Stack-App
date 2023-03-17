@@ -11,11 +11,8 @@ const wineSchema = new mongoose.Schema({
     producer: { type: String, required: true },
     abv: { type: Number, min: 0, max: 100, required: true },
     description: { type: String, required: true },
-    averageRating: { type: Number, min: 0, max: 5, required: true },
     photo: { type: String, required: true },
     isFeatured: { type: Boolean, default: false },
-    // the applications array can only accept objects that match the criteria specified
-    // in the applicationSchema. In other words, the applications array can only accept applications
     reviews: [reviewSchema]
 });
 
