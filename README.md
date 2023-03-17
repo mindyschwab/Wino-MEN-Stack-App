@@ -1,7 +1,7 @@
 # Wino-MEN-Stack-App
 General Assembly - SEI Mariposa: Wine tracking and reviewing web app for a casual wine lover
 
-An embedded screenshot of the app
+![alt text](Wireframes-ERD/Wino-screenshot.png "App screenshot") 
 
 ## Technologies used
 Node.js
@@ -9,16 +9,38 @@ Mongoose
 Express 
 EJS
 CSS
-<!-- CSS framework: Bootstap -->
+CSS framework: Tailwind and DaisyUI
 Git GitHub
 Visual Studio Code
+Heroku 
 Resource used: 
 
 
 ## Installation instructions
-TBD
-<!-- Clone respository or download html, css and html files and images folder. 
-Open html file with local server (VS code Live Preview) to view the page in the browser. Navigate between the html pages using the navigation bar at the top of the website.  -->
+Clone respository or download controllers, models, public, and views folders folders and files within. 
+Install and initialize dependencies:
+- connect-livereload
+- daisyui
+- dotenv
+- ejs
+- express
+- livereload
+- method-override
+- mongoose
+- tailwindcss
+
+Update .env file with your database connection string and assign port 3000.
+
+Update tailwind.config.js file to content section to include "["./views/**/*.ejs", "./public/**/*.js"],"
+
+Run npx tailwindcss -i ./public/styles/main.css -o ./dist/output.css --watch to create dist file and output.css files and to rebuild tailwind/daisyUI components file after style changes. 
+
+Enter command nodemon run dev to connect to MongoDB. Open local server on port 3000 to view the page in the browser. 
+
+Navigate to localhost:3000/seed to seed inital data to MongoDB database.
+
+Navigate between the views using the navigation bar at the top of the website. 
+
 
 ## User stories – who are your users, what do they want and why?
 Who are Wino users?
@@ -64,16 +86,17 @@ Who are Wino users?
     2. reviews (review model that references wines)
 - Wines schema will be used to make a model with all 7 RESTful routes and full CRUD.
 - Application will be styled professionally and have responsive design.
-- App will be hosted on Heroku by March 17, 2023
+- App will be hosted on Heroku 
 
 
 ## Stretch Goals (How your specific project look & behave *AFTER* you accomplish MVP)
-- allow users to create lists that users can add their favorite wines to
-- Allow users to "favorite" wines which add them to a list that they can access
-- EJS partial for wine card: complete
-- Home page: load more wines on scroll or carosel of featured wines 
-- Wine ratings: add all ratings and average, display on details page
-- Ability to edit wine reviews 
 - Use a new CSS framework like Skeleton or Materialize: complete - used tailwind and DaisyUI
+- EJS partial for wine card: complete
+- Wine ratings: add all ratings and average, display on details page: complete
+- Ability to edit wine reviews 
+- Allow users to create lists that users can add their favorite wines to
+- Allow users to "favorite" wines which add them to a list that they can access
+- Home page: load more wines on scroll or carosel of featured wines 
 
  ## Descriptions of any Unsolved problems or major hurdles you had to overcome
+ - learning how to install and use Tailwind has a new CSS framework was very challenging and took a large amount of time to get inital pages set up.  Once I figured it out the first view and form styling, it was easier to implement. 
