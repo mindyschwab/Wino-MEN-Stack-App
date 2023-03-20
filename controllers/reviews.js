@@ -24,7 +24,6 @@ router.get('/new/:wineId', (req, res) => {
         .then(wine => {
             res.render('reviews/new-review-form', { wine: wine })
         })
-    // res.send('You\'ve reached the new route. You\'ll be making a new review for wine ' + req.params.wineId)
 })
 
 // Create Route: POST localhost:3000/reviews/
@@ -38,7 +37,6 @@ router.post('/create/:wineId', (req, res) => {
         .then(wines => {
             res.redirect(`/wines/${wines._id}`)
         })
-    // res.send('this is the review create route')
 });
 
 /* Export these routes so that they are accessible in `server.js`

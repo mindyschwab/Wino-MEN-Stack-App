@@ -24,7 +24,6 @@ const app = express();
 --------------------------------------------------------------- */
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
-    // wait for nodemon to fully restart before refreshing the page
     setTimeout(() => {
         liveReloadServer.refresh("/");
     }, 100);
@@ -38,15 +37,9 @@ app.set('views', path.join(__dirname, 'views'));
 
 /* Middleware (app.use)
 --------------------------------------------------------------- */
-// indicates that the public folder is a static folder and that all files in it should be served as is
 app.use(express.static('public'))
-// Use the connectLiveReload middleware to inject the live reload script into the page
 app.use(connectLiveReload());
-// Body parser: used for POST/PUT/PATCH routes: 
-// this will take incoming strings from the body that are URL encoded and parse them 
-// into an object that can be accessed in the request parameter as a property called body (req.body).
 app.use(express.urlencoded({ extended: true }));
-// Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
 app.use(methodOverride('_method'));
 app.use(express.static('dist'));
 
@@ -64,12 +57,10 @@ app.get('/', function (req, res) {
 
 // When a GET request is sent to `/seed`, the wines collection is seeded
 app.get('/seed', function (req, res) {
-    // Remove any existing wines in db
     db.Wine.deleteMany({})
         .then(removedWines => {
             console.log(`Removed ${removedWines.length} wines from the database`)
 
-            // Seed the wine db collection with the seed data
             db.Wine.insertMany(db.seedWines)
                 .then(addedWines => {
                     console.log(`Added ${addedWines.length} wines seeded to the database`)
@@ -80,22 +71,17 @@ app.get('/seed', function (req, res) {
 
 app.get('/about', function (req, res) {
     res.render('about')
-    // res.send('Hello from the about page')
 });
 
 
-// // This tells our app to look at the `controllers/wines.js` file 
-// to handle all routes that begin with `localhost:3000/wines`
+// // This tells our app to look at the controllers files to handle all routes that begin with /wines and /reviews`
 app.use('/wines', winesCtrl)
 
-// // This tells our app to look at the `controllers/reviews.js` file 
-// // to handle all routes that begin with `localhost:3000/reviews`
 app.use('/reviews', reviewsCtrl)
 
 // // The "catch-all" route: Runs for any other URL that doesn't match the above routes
 app.get('*', function (req, res) {
     res.render('404')
-    // res.send('404')
 });
 
 /* Tell the app to listen on the specified port

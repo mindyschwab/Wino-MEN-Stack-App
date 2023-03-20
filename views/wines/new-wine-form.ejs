@@ -3,7 +3,6 @@
 
 <head>
     <%- include('../partials/head.ejs', {title: 'Add a Listing | Ceramics Express Store' }) %>
-        <!-- <link rel="stylesheet" href="/styles/product-form.css"> -->
 </head>
 
 <body>
@@ -17,15 +16,7 @@
                 <input type="text" class="input input-bordered w-full" id="name" name="name" required>
                 <br>
                 <!-- Style input -->
-
                 <label class="label" for="style"> <span class="label-text">Style: </span></label>
-                <!-- <select class="select select-bordered" id="style" name="style" value="0" required>
-                    <option disabled selected>Select One</option>
-                    <option value="Red">Red</option>
-                    <option value="White">White</option>
-                    <option value="Rose">Rose</option>
-                    <option value="Sparkling">Sparkling</option>
-                </select> -->
                 <div class="w-1/6">
                     <div class="form-control max-w-xs pl-5">
                         <label class="label cursor-pointer">
@@ -78,19 +69,6 @@
                 <label class="label" for="year"> <span class="label-text">Year:</span></label>
                 <input type="number" class="input input-bordered" id="year" name="year" min="1900" max="2023" required>
                 <br>
-                <!-- Rating input -->
-                <!-- <label class="label" for="averageRating"> <span class="label-text">Rating:</span></label>
-                <input type="number" class="input input-bordered" id="averageRating" name="averageRating" step="0.1"
-                    min="0" max="5" placeholder="4.0" required>
-                <br> -->
-                <!-- <label class="label" for="averageRating"> <span class="label-text">Rating:</span></label>
-                <div class="rating gap-1">
-                    <input type="radio" value="1" name="averageRating" class="mask mask-heart bg-red-400" />
-                    <input type="radio" value="2" name="averageRating" class="mask mask-heart bg-orange-400" checked />
-                    <input type="radio" value="3" name="averageRating" class="mask mask-heart bg-yellow-400" />
-                    <input type="radio" value="4" name="averageRating" class="mask mask-heart bg-lime-400" />
-                    <input type="radio" value="5" name="averageRating" class="mask mask-heart bg-green-400" />
-                </div> -->
                 <!-- ABV input -->
                 <label class="label" for="abv"> <span class="label-text">ABV:</span></label>
                 <input type="number" class="input input-bordered" id="abv" name="abv" min="0" step="0.01"

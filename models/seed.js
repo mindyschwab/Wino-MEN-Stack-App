@@ -62,7 +62,7 @@ const wines = [
         abv: 14.5,
         description: "An elegant Pinot Noir with flavors of cherry, raspberry, and spice.",
         photo: "https://www.centralwinemerchants.com/images/labels/domaine-serene-pinot-noir-willamette-valley-evenstad-reserve.jpg",
-        isFeatured: true,
+        isFeatured: false,
         reviews: [
             {
                 reviewerName: "David Lee",
@@ -88,7 +88,7 @@ const wines = [
         abv: 11.5,
         description: "This Spanish Cava is crisp and clean, with citrus and apple flavors, and a hint of toastiness. Perfect for toasting or enjoying with seafood or light appetizers.",
         photo: "https://images.vivino.com/thumbs/C_cGpdwNQMKDCCk5Vnj3yA_pb_x600.png",
-        isFeatured: false,
+        isFeatured: true,
         reviews: [
             {
                 reviewerName: "John Doe",
@@ -212,7 +212,7 @@ const wines = [
         abv: 13.5,
         description: 'Full-bodied, with ripe black fruit flavors and a long finish.',
         photo: 'https://images.vivino.com/thumbs/DygMHm5zSi2qXX6I0Hk90A_pb_600x600.png',
-        isFeatured: true,
+        isFeatured: false,
         reviews: [
             {
                 reviewerName: 'John Smith',
@@ -264,7 +264,7 @@ const wines = [
         abv: 14.5,
         description: "Full-bodied with rich flavors of dark fruit and vanilla.",
         photo: "https://www.traderjoes.com/content/dam/trjo/products/m306/wine/52078.png/jcr:content/renditions/cq5dam.web.1280.1280",
-        isFeatured: true,
+        isFeatured: false,
         reviews: [
             {
                 reviewerName: "John",
