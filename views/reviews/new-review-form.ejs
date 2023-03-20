@@ -7,49 +7,51 @@
 
 <body>
     <%- include('../partials/nav.ejs') %>
-
-        <div class="hero min-h-16 "
-            style="background-image: url(https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);">
-            <div class=" hero-overlay bg-opacity-60"></div>
-            <div class="hero-content text-center text-neutral-content">
-                <div class="max-w-md">
-                    <h1 class="mb-5 text-5xl font-bold">Tell us what you think!</h1>
-                    <p class="mb-5">You're creating a new review for <a href="/wines/<%= wine._id %>">
-                            <%= wine.name %>
-                        </a>
-                    </p>
+        <main class="min-h-screen">
+            <div class="hero min-h-16 "
+                style="background-image: url(https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);">
+                <div class=" hero-overlay bg-opacity-60"></div>
+                <div class="hero-content text-center text-neutral-content">
+                    <div class="max-w-md">
+                        <h1 class="mb-5 text-5xl font-bold">Tell us what you think!</h1>
+                        <p class="mb-5">You're creating a new review for <a href="/wines/<%= wine._id %>">
+                                <%= wine.name %>
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <h2 class="p-4 text-3xl font-bold">Create a New Review</h2>
-        <div class="form-control bg-base-200 border-primary w-2/3 mt-5 mb-9 mx-auto p-14 rounded">
-            <form action="/reviews/create/<%= wine._id %>" method="POST">
+            <h2 class="p-4 text-3xl font-bold">Create a New Review</h2>
+            <div class="form-control bg-base-200 border-primary w-2/3 mt-5 mb-9 mx-auto p-14 rounded">
+                <form action="/reviews/create/<%= wine._id %>" method="POST">
 
-                <!-- Name input -->
-                <label class="label" for="reviewerName"><span class="label-text">Name: </span></label>
-                <input type="text" class="input input-bordered w-full" id="reviewerName" name="reviewerName" required>
+                    <!-- Name input -->
+                    <label class="label" for="reviewerName"><span class="label-text">Name: </span></label>
+                    <input type="text" class="input input-bordered w-full" id="reviewerName" name="reviewerName"
+                        required>
 
-                <!-- Rating input -->
-                <label class="label" for="rating"> <span class="label-text">Rating:</span></label>
-                <div class="rating gap-1">
-                    <input type="radio" value="1" name="rating" class="mask mask-heart bg-red-400" />
-                    <input type="radio" value="2" name="rating" class="mask mask-heart bg-orange-400" checked />
-                    <input type="radio" value="3" name="rating" class="mask mask-heart bg-yellow-400" />
-                    <input type="radio" value="4" name="rating" class="mask mask-heart bg-lime-400" />
-                    <input type="radio" value="5" name="rating" class="mask mask-heart bg-green-400" />
-                </div>
+                    <!-- Rating input -->
+                    <label class="label" for="rating"> <span class="label-text">Rating:</span></label>
+                    <div class="rating gap-1">
+                        <input type="radio" value="1" name="rating" class="mask mask-heart bg-red-400" />
+                        <input type="radio" value="2" name="rating" class="mask mask-heart bg-orange-400" checked />
+                        <input type="radio" value="3" name="rating" class="mask mask-heart bg-yellow-400" />
+                        <input type="radio" value="4" name="rating" class="mask mask-heart bg-lime-400" />
+                        <input type="radio" value="5" name="rating" class="mask mask-heart bg-green-400" />
+                    </div>
 
-                <label class="label" for="title"><span class="label-text">Review Title: </span></label>
-                <input type="text" class="input input-bordered w-full" id="title" name="title" required>
+                    <label class="label" for="title"><span class="label-text">Review Title: </span></label>
+                    <input type="text" class="input input-bordered w-full" id="title" name="title" required>
 
-                <label class="label" for="content"><span class="label-text">Review Content: </span></label>
-                <textarea class="input input-bordered w-full" id="content" name="content" required></textarea>
+                    <label class="label" for="content"><span class="label-text">Review Content: </span></label>
+                    <textarea class="input input-bordered w-full" id="content" name="content" required></textarea>
 
-                <div class="pt-4">
-                    <input class="btn btn-primary" type="submit" value="Submit">
-                </div>
-            </form>
+                    <div class="pt-4">
+                        <input class="btn btn-primary" type="submit" value="Submit">
+                    </div>
+                </form>
+        </main>
         </div>
         <%- include('../partials/footer.ejs') %>
 </body>
