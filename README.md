@@ -4,17 +4,15 @@ General Assembly - SEI Mariposa: Wine tracking and reviewing web app for a casua
 ![alt text](Wireframes-ERD/Wino-screenshot.png "App screenshot") 
 
 ## Technologies used
-Node.js
-Mongoose 
-Express 
-EJS
-CSS
-CSS framework: Tailwind and DaisyUI
-Git GitHub
-Visual Studio Code
-Heroku 
-Resource used: 
-
+- Node.js
+- Mongoose 
+- Express 
+- EJS
+- CSS
+- CSS framework: Tailwind and DaisyUI
+- Git GitHub
+- Visual Studio Code
+- Heroku 
 
 ## Installation instructions
 Clone respository or download controllers, models, public, and views folders folders and files within. 
